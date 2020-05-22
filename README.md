@@ -8,6 +8,8 @@ fix this, but always have to drag yer ass over to StackOverflow to look up again
 
 `git split-commit` is for you!
 
+> **🚨Warning:** This is experimental and might be buggy. Always backup before using and very results.
+
 
 ## Usage
 
@@ -91,7 +93,7 @@ $ git lg
 
 ## Changelog
 
-* v0.0.0 (2020-05-22) - Initial version. Does not exist.
+* v0.1.0 (2020-05-22) - Initial version. Works
 
 ## License
 

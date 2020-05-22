@@ -9,8 +9,10 @@ black = "*"
 pytest = "*"
 
 [packages]
-consolemenu = "*"
 gitpython = "*"
+click = "*"
+coloredlogs = "*"
+simple-term-menu = "*"
 
 [requires]
 python_version = "3.7"
