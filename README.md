@@ -8,7 +8,9 @@ fix this, but always have to drag yer ass over to StackOverflow to look up again
 
 `git split-commit` is for you!
 
-> **🚨Warning:** This is experimental and might be buggy. Always backup before using and very results.
+> **🚨Warning:** This is experimental and is definitely buggy. Always backup before using and verify results.
+
+![render1590174050770](https://user-images.githubusercontent.com/390829/82701274-dcd36100-9c3d-11ea-8bb2-7e54edb2155d.gif)
 
 
 ## Usage
