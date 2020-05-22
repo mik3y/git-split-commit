@@ -32,24 +32,26 @@ $ pipx install git+https://github.com/mik3y/git-split-commit.git
 
 ## Example
 
-Let's look at a simple project. After a splendid day of hacking, our repo has a
+Let's look at [a simple project](https://github.com/mik3y/git-split-commit-example-repo). After a splendid day of hacking, our repo has a
 handful of files:
 
 ```
-$ ls
-README.md
-index.html
-pages/account.html
-pages/privacy.html
+$ git clone git@github.com:mik3y/git-split-commit-example-repo.git example
+$ cd example
+$ ls -R
+README.md pages
+
+./pages:
+account.html   index.html   privacy.html
 ```
 
 Here's the commit history for the day:
 
 ```
 $ git lg
-* 27a76c6 - (HEAD -> master) Update docs (2 minutes ago) <Mary Maker>
-* 0eb6011 - Add account.html (3 hours ago) <Mary Maker>
-* 8c79d74 - Initial project (9 hours ago) <Mary Maker>
+* e0609c2 - (HEAD -> master, origin/master, origin/HEAD) Update README.md (2 hours ago) <mike wakerly>
+* 72774ad - Add account.html (2 hours ago) <mike wakerly>
+* c4f0f07 - Initial project. (2 hours ago) <mike wakerly>
 ```
 
 Oh no! Our commit history is not what we expected: We meant to add
@@ -64,36 +66,33 @@ we break up `0eb6011` into 2 sequential commits?
 Let's use `git split-commit`!
 
 ```
-$ git split-commit 0eb6011
-Will break commit 0eb6011 into two different commits.
+$ git split-commit 72774ad
+Output branch name [split-commit-tmp]:
 
-Select files for first commit:
-[*] pages/account.html
-[ ] pages/privacy.html
+Message for second commit? [Split from previous commit]: Add privacy.html
+Ready to split! Please review:
 
-[Continue] (Abort)
+First commit:
 
-Committed first commit. New SHA: 82ef311
+  A pages/account.html
+  A pages/index.html
 
-Files automatically selected for second commit:
-+ pages/privacy.html
+Second commit:
 
-Press enter to edit commit message in your editor.
+  A pages/privacy.html
 
-Committed second commit. New SHA: b402f9e
-Finishing rebase...
-
-Done! Thanks for a great split.
+Proceed? [y/N]: y
+🍌 Split complete! Enjoy your day.
 ```
 
 Success! Check out our new history:
 
 ```
 $ git lg
-* 7ec1c09 - (HEAD -> master) Update docs (1 minute ago) <Mary Maker>
-* b402f9e - Add privacy.html (1 minute ago) <Mary Maker>
-* 82ef311 - Add account.html (3 hours ago) <Mary Maker>
-* 8c79d74 - Initial project (9 hours ago) <Mary Maker>
+* 43525f8 - (HEAD -> split-commit-tmp) Update README.md (14 seconds ago) <mike wakerly>
+* b7890cc - Add privacy.html (14 seconds ago) <mike wakerly>
+* 6e50068 - Add account.html (15 seconds ago) <mike wakerly>
+* c4f0f07 - Initial project. (2 hours ago) <mike wakerly>
 ```
 
 ## TODO
