@@ -22,8 +22,11 @@ $ git split-commit <sha-to-split>
 
 ## Installation
 
+Requires [pipx](https://github.com/pipxproject/pipx) to install.
+
 ```
-$ pipx install git-split-commit
+$ pip install pipx
+$ pipx install git+https://github.com/mik3y/git-split-commit.git
 ```
 
 
@@ -93,9 +96,16 @@ $ git lg
 * 8c79d74 - Initial project (9 hours ago) <Mary Maker>
 ```
 
+## TODO
+
+* Test things - a lot.
+* Figure out how to handle root commits.
+* Fix up cursor jumping in select menu.
+* Consider using `pygit2` bindings.
+
 ## Changelog
 
-* v0.1.0 (2020-05-22) - Initial version. Works
+* v0.1.0 (2020-05-22) - Initial version. Sorta works.
 
 ## License
 
