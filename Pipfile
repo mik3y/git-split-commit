@@ -7,6 +7,7 @@ verify_ssl = true
 git-split-commit = {editable = true,path = "."}
 black = "*"
 pytest = "*"
+twine = "*"
 
 [packages]
 gitpython = "*"
@@ -15,7 +16,7 @@ coloredlogs = "*"
 simple-term-menu = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3"
 
 [pipenv]
 allow_prereleases = true

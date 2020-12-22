@@ -22,11 +22,11 @@ $ git split-commit <sha-to-split>
 
 ## Installation
 
-Requires [pipx](https://github.com/pipxproject/pipx) to install.
+The recommended way is to use [pipx](https://github.com/pipxproject/pipx) to install.
 
 ```
 $ pip install pipx
-$ pipx install git+https://github.com/mik3y/git-split-commit.git
+$ pipx install git-split-commit
 ```
 
 
@@ -104,7 +104,7 @@ $ git lg
 
 ## Changelog
 
-* v0.1.0 (2020-05-22) - Initial version. Sorta works.
+See `CHANGELOG.md`
 
 ## License
 
